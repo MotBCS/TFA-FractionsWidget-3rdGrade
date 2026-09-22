@@ -11,7 +11,7 @@
 </head>
 
 
-<body>
+  <body>
   <div class="app" role="application" aria-label="Fraction Pizza Party lesson">
     <header class="topbar">
       <div class="title-wrap">
@@ -21,12 +21,11 @@
           <p class="subtitle">A 5 minute lesson about fractions!</p>
         </div>
       </div>
-      <!-- <div class="timer" aria-label="Lesson timer"><small>Time</small><span id="timer">5:00</span></div> -->
     </header>
 
     <div class="progress-area">
-      <div class="progress-label"><span id="progressText">Ready to begin</span><span id="stepCount">0 of 5</span></div>
-      <div class="progress-track" role="progressbar" aria-label="Lesson progress" aria-valuemin="0" aria-valuemax="5" aria-valuenow="0">
+      <div class="progress-label"><span id="progressText">Ready to begin</span><span id="stepCount">0 of 6</span></div>
+      <div class="progress-track" role="progressbar" aria-label="Lesson progress" aria-valuemin="0" aria-valuemax="6" aria-valuenow="0">
         <div class="progress-fill" id="progressFill"></div>
       </div>
     </div>
@@ -34,23 +33,46 @@
     <main>
       <section class="screen active" data-screen="0">
         <p class="step-kicker">👋 Welcome, mathematician!</p>
-        <h2>Can you help serve the pizza?</h2>
-        <p class="lead">Today, you will learn how to add fractions that have the <strong>same denominator</strong>.</p>
+        <h2>Can You Help Serve the Pizza?</h2>
+        <p class="lead">Today, we are going to learn how to add fractions with the <strong>same</strong> denominator.</p>
         <div class="hero-pizza" aria-label="Animated pizza"><span aria-hidden="true">🍕</span></div>
 
-        <div class="teacher-note"><strong>"We're going to learn how to add fractions that have the same bottom number — using delicious pizza! Let’s get started!”</div>
-        <div class="controls"><span></span><button class="primary" id="startBtn" type="button">Start the lesson!</button></div>
+        <div class="teacher-note"><strong>We will use pizza to help us!</strong></div>
+        <div class="controls"><span></span><button class="primary" id="startBtn" type="button">Let's get started!</button></div>
       </section>
 
       <section class="screen" data-screen="1">
-        <p class="step-kicker">Step 1</p>
-        <h2>Warm-up: Count the pieces</h2>
+        <p class="step-kicker">Slide 1</p>
+        <h2>What Do these Numbers Mean?</h2>
+        <p class="lead">A fraction has two numbers.</p>
+
+        <div class="frac-diagram">
+          <span class="frac-chip num-chip">Numerator - Top Number</span>
+          <span class="arrow" aria-hidden="true">↓</span>
+          <div class="big-fraction" role="img" aria-label="The fraction three fourths, with three as the numerator and four as the denominator">
+            <span class="big-num">3</span>
+            <span class="frac-bar"></span>
+            <span class="big-den">4</span>
+          </div>
+          <span class="arrow" aria-hidden="true">↑</span>
+          <span class="frac-chip den-chip">Denominator - Bottom Number</span>
+        </div>
+
+        <div class="frac-meaning">
+          <div class="meaning-num">The <strong>numerator (top)</strong>tells us how many pieces we are talking about.</div>
+          <div class="meaning-den">The <strong>denominator (bottom)</strong>tells us how many total number of pieces there are.</div>
+        </div>
+
+        <!-- <div class="teacher-note"><strong>Think of it this way:</strong>The denominator names the pieces (like "fourths"), and the numerator counts how many of them you have.</div> -->
+        <div class="controls"><button class="secondary back" type="button">← Back</button><button class="primary next" type="button">Next →</button></div>
+      </section>
+
+      <section class="screen" data-screen="2">
+        <p class="step-kicker">Slide 2</p>
+        <h2>Warm-up: Count the Pieces!</h2>
         <p class="lead">This pizza is cut into <strong>8 equal pieces</strong>. Three pieces have been served.<br> What fraction of the pizza was served?</p>
         <div class="model" aria-label="Three out of eight pizza pieces">
-          <div class="emoji-row">
-            <span class="piece filled">🍕</span><span class="piece filled">🍕</span><span class="piece filled">🍕</span>
-            <span class="piece">🍕</span><span class="piece">🍕</span><span class="piece">🍕</span><span class="piece">🍕</span><span class="piece">🍕</span>
-          </div>
+          <div class="pizza-wrap"><div class="pizza large" id="pizza-warmup"></div></div>
         </div>
         <div class="choices" data-question="warmup">
           <button class="choice" data-answer="wrong" type="button">3/5</button>
@@ -58,38 +80,44 @@
           <button class="choice" data-answer="wrong" type="button">8/3</button>
         </div>
         <div class="feedback" id="warmupFeedback" aria-live="polite"></div>
-        <div class="teacher-note"><strong>Remember:</strong>The top number (numerator) tells how many pieces we have. The bottom number (denominator) tells how many pieces we have in total.</div>
-        <div class="controls"><button class="secondary back" type="button">← Back</button><button class="primary next" type="button" disabled>Next →</button></div>
-      </section>
-
-      <section class="screen" data-screen="2">
-        <p class="step-kicker">Step 2</p>
-        <h2>Learn the fraction rule</h2>
-        <p class="lead">When the bottom numbers match, just add the <strong>TOP</strong> numbers. The bottom number stays the same!</p>
-        <div class="rule-card">
-          <div class="math"><span class="fraction"><span>2</span><span>8</span></span> + <span class="fraction"><span>3</span><span>8</span></span> = <span class="fraction"><span>5</span><span>8</span></span></div>
-          <p>2 + 3 = 5 on top. The 8 stays on the bottom!</p>
-        </div>
-        <div class="fraction-models">
-          <div class="model"><strong>2/8</strong><div class="emoji-row"><span class="piece filled">🍕</span><span class="piece filled">🍕</span><span class="piece">▫️</span><span class="piece">▫️</span><span class="piece">▫️</span><span class="piece">▫️</span><span class="piece">▫️</span><span class="piece">▫️</span></div></div>
-          <div class="operator">+</div>
-          <div class="model"><strong>3/8</strong><div class="emoji-row"><span class="piece filled">🍕</span><span class="piece filled">🍕</span><span class="piece filled">🍕</span><span class="piece">▫️</span><span class="piece">▫️</span><span class="piece">▫️</span><span class="piece">▫️</span><span class="piece">▫️</span></div></div>
-          <div class="operator">=</div>
-          <div class="model"><strong>5/8</strong><div class="emoji-row"><span class="piece filled">🍕</span><span class="piece filled">🍕</span><span class="piece filled">🍕</span><span class="piece filled">🍕</span><span class="piece filled">🍕</span><span class="piece">▫️</span><span class="piece">▫️</span><span class="piece">▫️</span></div></div>
-        </div>
-        <div class="teacher-note">“Why does the denominator stay 8? That's because the whole pizza is still cut into 8 equal pieces.”</div>
-        <div class="controls"><button class="secondary back" type="button">← Back</button><button class="primary next" type="button">Let’s practice →</button></div>
+        <div class="teacher-note">Think about how many pieces were served, and how many pieces are in the whole pizza.</div>
+        <div class="controls"><button class="secondary back" type="button">← Back</button><button class="primary next gated" type="button" disabled>Next →</button></div>
       </section>
 
       <section class="screen" data-screen="3">
-        <p class="step-kicker">Step 3</p>
-        <h2>Let's try it together</h2>
-        <p class="lead">A pepperoni pizza has 6 equal slices. Thomas eats 1/6 of the pizza and Layla eats 2/6 of the pizza. How much pizza did they eat?</p>
+        <p class="step-kicker">Slide 3</p>
+        <h2>The Fraction Rule</h2>
+        <p class="lead">What happens when we add fractions with the same denominator?</p>
+        
         <div class="fraction-models">
-          <div class="model"><strong>1/6</strong><div class="emoji-row" style="grid-template-columns:repeat(6,1fr)"><span class="piece filled">🍕</span><span class="piece">▫️</span><span class="piece">▫️</span><span class="piece">▫️</span><span class="piece">▫️</span><span class="piece">▫️</span></div></div>
+          <div class="model"><strong>2/8</strong><div class="pizza-wrap"><div class="pizza" id="pizza-rule-a"></div></div></div>
           <div class="operator">+</div>
-          <div class="model"><strong>2/6</strong><div class="emoji-row" style="grid-template-columns:repeat(6,1fr)"><span class="piece filled">🍕</span><span class="piece filled">🍕</span><span class="piece">▫️</span><span class="piece">▫️</span><span class="piece">▫️</span><span class="piece">▫️</span></div></div>
-          <div class="operator">=</div><div class="model"><strong>?</strong><div aria-hidden="true" style="font-size:3.2rem">🤔</div></div>
+          <div class="model"><strong>3/8</strong><div class="pizza-wrap"><div class="pizza" id="pizza-rule-b"></div></div></div>
+          <div class="operator">=</div>
+          <div class="model"><strong>5/8</strong><div class="pizza-wrap"><div class="pizza" id="pizza-rule-c"></div></div></div>
+        </div>
+
+        <div class="rule-card">
+          <div class="math"><span class="fraction"><span>2</span><span>8</span></span> + <span class="fraction"><span>3</span><span>8</span></span> = <span class="fraction"><span>5</span><span>8</span></span></div>
+          <p>Notice that the denominator (bottom number) is the same? That means we just have to add our numerators (top number).
+            Since the pizza is still cut into 8 slices, the denominator stays 8.
+          </p>
+        </div>
+
+        <div class="teacher-note">"Why does the denominator stay 8? That's because the whole pizza is still cut into 8 equal pieces."</div>
+        <div class="controls"><button class="secondary back" type="button">← Back</button><button class="primary next" type="button">Let's practice →</button></div>
+      </section>
+
+      <section class="screen" data-screen="4">
+        <p class="step-kicker">Slide 4</p>
+        <h2>Let's Try It Together!</h2>
+        <p class="lead">A pepperoni pizza has 6 equal slices. Thomas eats 1/6 of the pizza and Layla eats 2/6 of the pizza. How much pizza did they eat altogether?</p>
+        <div class="fraction-models">
+          <div class="model"><strong>1/6</strong><div class="pizza-wrap"><div class="pizza small" id="pizza-guided-a"></div></div></div>
+          <div class="operator">+</div>
+          <div class="model"><strong>2/6</strong><div class="pizza-wrap"><div class="pizza small" id="pizza-guided-b"></div></div></div>
+          <div class="operator">=</div>
+          <div class="model"><strong>?</strong><div aria-hidden="true" style="font-size:3.2rem">🤔</div></div>
         </div>
         <div class="choices" data-question="guided">
           <button class="choice" data-answer="wrong" type="button">3/12</button>
@@ -97,92 +125,123 @@
           <button class="choice" data-answer="correct" type="button">3/6</button>
         </div>
         <div class="feedback" id="guidedFeedback" aria-live="polite"></div>
-        <div class="controls"><button class="secondary back" type="button">← Back</button><button class="primary next" type="button" disabled>My turn →</button></div>
+        <div class="controls"><button class="secondary back" type="button">← Back</button><button class="primary next gated" type="button" disabled>Next →</button></div>
       </section>
 
-      <section class="screen" data-screen="4">
-        <p class="step-kicker">Step 4</p>
-        <h2>Let's try a challenge!</h2>
-        <p class="lead">Three friends are sharing 10 slices of pizza.
-            <br><span  style="color: blue;">Amy</span> eats 3 slices, <span style="color: rgb(255, 128, 0);">Morgan</span> and <span style="color: rgb(48, 150, 33);">Max</span> both eat 2 slices. How many slices did they eat in total?</p>
-        <div class="model" aria-label="Four sunflower tenths and three tulip tenths">
-          <div class="emoji-row" style="grid-template-columns:repeat(10,1fr)">
-            <span class="piece filled" style="border: blue solid 2px;">🍕</span><span class="piece filled" style="border: blue solid 2px;">🍕</span><span class="piece filled" style="border: blue solid 2px;">🍕</span>
-            <span class="piece filled" style="border: rgb(255, 128, 0) solid 2px;">🍕</span><span class="piece filled" style="border: rgb(255, 128, 0) solid 2px;">🍕</span>
-            <span class="piece filled" style="border: rgb(48, 150, 33) solid 2px;">🍕</span><span class="piece filled" style="border: rgb(48, 150, 33) solid 2px;">🍕</span>
-            <span class="piece">🍕</span><span class="piece">🍕</span><span class="piece">🍕</span>
+      <section class="screen" data-screen="5">
+        <p class="step-kicker">Slide 5</p>
+        <h2>Let's Try a Challenge!</h2>
+        <p class="lead">Three friends are sharing a pizza with 10 equal slices.
+            <br><span style="color: #3c91e6;">Amy</span> eats 3 slices. <br><span style="color: rgb(255, 128, 0);">Morgan eats 2 slices</span>.<br><span style="color: rgb(48, 150, 33);">Max</span>eats 2 slices.<br>How many slices did they eat altogether?</p>
+        <div class="model" aria-label="Amy ate three tenths, Morgan ate two tenths, Max ate two tenths">
+          <div class="pizza-wrap"><div class="pizza large" id="pizza-challenge"></div></div>
+          <div class="pizza-legend">
+            <span class="legend-chip"><span class="legend-dot" style="background:#3c91e6"></span>Amy: 3</span>
+            <span class="legend-chip"><span class="legend-dot" style="background:rgb(255,128,0)"></span>Morgan: 2</span>
+            <span class="legend-chip"><span class="legend-dot" style="background:rgb(48,150,33)"></span>Max: 2</span>
           </div>
         </div>
-        <div class="equation-builder" aria-label="Four tenths plus three tenths equals blank tenths">
-          <span class="fraction"><span style="color: blue;">3</span><span>10</span></span> +
+        <div class="equation-builder" aria-label="Three tenths plus two tenths plus two tenths equals blank tenths">
+          <span class="fraction"><span style="color: #3c91e6;">3</span><span>10</span></span> +
           <span class="fraction"><span style="color: rgb(255, 128, 0);">2</span><span>10</span></span> +
           <span class="fraction"><span style="color: rgb(48, 150, 33);">2</span><span>10</span></span> =
           <span class="fraction"><span><label class="sr-only" for="numeratorAnswer">Answer numerator</label><input class="answer-box" id="numeratorAnswer" inputmode="numeric" maxlength="2" autocomplete="off"></span><span>10</span></span>
         </div>
         <button class="primary" id="checkAnswer" type="button" style="display:block;margin:auto">Check my answer</button>
         <div class="feedback" id="independentFeedback" aria-live="polite"></div>
-        <div class="controls"><button class="secondary back" type="button">← Back</button><button class="primary next" type="button" disabled>Finish →</button></div>
+        <div class="controls"><button class="secondary back" type="button">← Back</button><button class="primary next gated" type="button" disabled>Finish →</button></div>
       </section>
 
-      <section class="screen" data-screen="5">
-        <p class="step-kicker">Step 5</p>
-        <h2>Amazing! You are a fraction superstar!</h2>
-        <p class="lead">You learned how to add fractions with the same denominator, let's do a recap of what we learned.</p>
+      <section class="screen" data-screen="6">
+        <p class="step-kicker">Step 6</p>
+        <h2>Amazing! You're a Fraction Superstar!</h2>
+        <p class="lead">Let's review what we learned.</p>
         <div class="stars" aria-label="Three stars"><span>⭐</span><span>⭐</span><span>⭐</span></div>
         <div class="recap">
-          <div><b>1</b>Check: same denominator?</div>
-          <div><b>2</b>Add the numerators.</div>
-          <div><b>3</b>Keep the denominator the same.</div>
+          <div>
+            <b>1.</b>Check the bottom numbers.
+            <p>Are the denominators the same?</p>
+          </div>
+
+          <div>
+            <b>2.</b>Add the top numbers.
+            <p>Add the numerators straight across.</p>
+          </div>
+
+          <div>
+            <b>3.</b>Keep the bootom number the same.
+            <p>The denominator stays the same.</p>
+          </div>
+          
         </div>
-        <!-- <div class="rule-card"><div class="math">Remember: Top + Top and Bottom stays! 🎉</div></div> -->
-        <!-- <div class="teacher-note"><strong>Exit question</strong>Ask aloud: “What is 2/5 + 1/5?” Answer: <strong>3/5</strong>.</div> -->
         <div class="controls"><button class="secondary back" type="button">← Review</button><button class="primary" id="restartBtn" type="button">Play again ↻</button></div>
       </section>
     </main>
   </div>
 
   <script>
+    // ---------- Circular conic-gradient pizza painter ----------
+    function paintPizza(el, denominator, segments, toppingEmoji) {
+      el.innerHTML = "";
+      var fill = document.createElement("div");
+      fill.className = "pizza-fill";
+      var stops = [];
+      var running = 0;
+      segments.forEach(function (seg) {
+        var start = (running / denominator) * 100;
+        running += seg.count;
+        var end = (running / denominator) * 100;
+        stops.push(seg.color + " " + start + "% " + end + "%");
+      });
+      var remainderStart = (running / denominator) * 100;
+      stops.push("var(--cheese) " + remainderStart + "% 100%");
+      fill.style.background = "conic-gradient(" + stops.join(", ") + ")";
+      el.appendChild(fill);
+
+      var lines = document.createElement("div");
+      lines.className = "pizza-slices";
+      lines.style.background = "repeating-conic-gradient(from 0deg, transparent 0deg calc(360deg/" + denominator + " - 1.5deg), var(--crust) calc(360deg/" + denominator + " - 1.5deg) calc(360deg/" + denominator + "))";
+      el.appendChild(lines);
+
+      if (toppingEmoji && segments.length === 1) {
+        var box = el.classList.contains("large") ? 75 : el.classList.contains("small") ? 39 : 48;
+        var radius = box * 0.4;
+        var count = segments[0].count;
+        for (var s = 0; s < count; s++) {
+          var angleDeg = (s + 0.5) * (360 / denominator) - 90;
+          var angleRad = (angleDeg * Math.PI) / 180;
+          var cx = box + radius * Math.cos(angleRad);
+          var cy = box + radius * Math.sin(angleRad);
+          var t = document.createElement("div");
+          t.className = "pizza-topping";
+          t.style.left = cx + "px";
+          t.style.top = cy + "px";
+          t.textContent = toppingEmoji;
+          el.appendChild(t);
+        }
+      }
+    }
+
     document.addEventListener('DOMContentLoaded', () => {
       const screens = [...document.querySelectorAll('.screen')];
       const progressFill = document.getElementById('progressFill');
       const progressText = document.getElementById('progressText');
       const stepCount = document.getElementById('stepCount');
       const progressTrack = document.querySelector('.progress-track');
-    //   const timerEl = document.getElementById('timer');
-      const labels = ['Ready to begin', 'Warm-up', 'Learn', 'Practice together', 'Your turn', 'Lesson complete'];
+      const labels = ['Ready to begin', 'Numerator & denominator', 'Warm-up', 'Learn', 'Practice together', 'Your turn', 'Lesson complete'];
+      const totalSteps = screens.length - 1;
       let current = 0;
-    //   let secondsLeft = 300;
-    //   let timerId = null;
 
       function showScreen(index) {
         current = Math.max(0, Math.min(index, screens.length - 1));
         screens.forEach((screen, i) => screen.classList.toggle('active', i === current));
-        const completedSteps = Math.min(current, 5);
-        progressFill.style.width = `${completedSteps * 20}%`;
+        const completedSteps = Math.min(current, totalSteps);
+        progressFill.style.width = `${(completedSteps / totalSteps) * 100}%`;
         progressText.textContent = labels[current];
-        stepCount.textContent = `${completedSteps} of 5`;
+        stepCount.textContent = `${completedSteps} of ${totalSteps}`;
         progressTrack.setAttribute('aria-valuenow', completedSteps);
         document.querySelector('.app').scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
-
-    //   function updateTimer() {
-    //     const minutes = Math.floor(secondsLeft / 60);
-    //     const seconds = String(secondsLeft % 60).padStart(2, '0');
-    //     timerEl.textContent = `${minutes}:${seconds}`;
-    //     if (secondsLeft <= 0) {
-    //       clearInterval(timerId);
-    //       timerId = null;
-    //       timerEl.textContent = 'Nice work!';
-    //       return;
-    //     }
-    //     secondsLeft -= 1;
-    //   }
-
-    //   function startTimer() {
-    //     if (timerId) return;
-    //     updateTimer();
-    //     timerId = setInterval(updateTimer, 1000);
-    //   }
 
       function handleChoice(group) {
         const question = group.dataset.question;
@@ -196,14 +255,14 @@
             button.classList.add('correct');
             feedback.className = 'feedback show good';
             feedback.textContent = question === 'warmup'
-              ? 'Great! 3 out of 8 pieces of pizza where eaten. 🌟'
+              ? 'Great! 3 out of 8 pieces of pizza were eaten. 🌟'
               : 'Exactly! Add 1 + 2 and keep the denominator 6: 3/6. 🎉';
             nextButton.disabled = false;
           } else {
             button.classList.add('wrong');
             feedback.className = 'feedback show try';
             feedback.textContent = question === 'warmup'
-              ? 'Almost! Count the total number of pizza slices then, count how many where eaten.'
+              ? 'Almost! Count the total number of pizza slices then, count how many were eaten.'
               : 'Try again: add only the top numbers. The denominator stays 6.';
           }
         });
@@ -212,20 +271,19 @@
       document.querySelectorAll('.choices').forEach(handleChoice);
 
       document.getElementById('startBtn').addEventListener('click', () => {
-        // startTimer();
         showScreen(1);
       });
 
       document.querySelectorAll('.next').forEach(button => button.addEventListener('click', () => {
         showScreen(current + 1);
-        if (current === 5) launchConfetti();
+        if (current === totalSteps) launchConfetti();
       }));
 
       document.querySelectorAll('.back').forEach(button => button.addEventListener('click', () => showScreen(current - 1)));
 
       const answerInput = document.getElementById('numeratorAnswer');
       const independentFeedback = document.getElementById('independentFeedback');
-      const finishButton = document.querySelector('[data-screen="4"] .next');
+      const finishButton = document.querySelector('[data-screen="5"] .next');
 
       document.getElementById('checkAnswer').addEventListener('click', checkIndependentAnswer);
       answerInput.addEventListener('keydown', event => {
@@ -247,18 +305,12 @@
       }
 
       document.getElementById('restartBtn').addEventListener('click', () => {
-        // clearInterval(timerId);
-        // timerId = null;
-        // secondsLeft = 300;
-        // timerEl.textContent = '5:00';
         document.querySelectorAll('.choice').forEach(choice => choice.classList.remove('correct', 'wrong'));
         document.querySelectorAll('.feedback').forEach(feedback => {
           feedback.className = 'feedback';
           feedback.textContent = '';
         });
-        document.querySelectorAll('.next').forEach((button, index) => {
-          if (index !== 1) button.disabled = true;
-        });
+        document.querySelectorAll('.next.gated').forEach(button => { button.disabled = true; });
         answerInput.value = '';
         answerInput.removeAttribute('aria-invalid');
         showScreen(0);
@@ -278,6 +330,18 @@
           setTimeout(() => bit.remove(), 3600);
         }
       }
+
+      paintPizza(document.getElementById('pizza-warmup'), 8, [{ count: 3, color: 'var(--pepperoni)' }], null);
+      paintPizza(document.getElementById('pizza-rule-a'), 8, [{ count: 2, color: 'var(--pepperoni)' }], null);
+      paintPizza(document.getElementById('pizza-rule-b'), 8, [{ count: 3, color: 'var(--pepperoni)' }], null);
+      paintPizza(document.getElementById('pizza-rule-c'), 8, [{ count: 5, color: 'var(--pepperoni)' }], null);
+      paintPizza(document.getElementById('pizza-guided-a'), 6, [{ count: 1, color: 'var(--pepperoni)' }], null);
+      paintPizza(document.getElementById('pizza-guided-b'), 6, [{ count: 2, color: 'var(--pepperoni)' }], null);
+      paintPizza(document.getElementById('pizza-challenge'), 10, [
+        { count: 3, color: '#3c91e6' },
+        { count: 2, color: 'rgb(255,128,0)' },
+        { count: 2, color: 'rgb(48,150,33)' }
+      ], null);
     });
   </script>
 </body>
