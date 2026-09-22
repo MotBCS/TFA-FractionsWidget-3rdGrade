@@ -1,4 +1,4 @@
-# Fractions Widget - 3rdGrade
+# Fractions Widget - 3rd Grade
 
 ## Grade Level
 3rd Grade
